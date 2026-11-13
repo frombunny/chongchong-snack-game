@@ -548,9 +548,9 @@ Sound: user-provided 99430F405CF09B6E20.mp3 and 9956064F5CFA51E124.mp3
       if (member.state === 'studying') {
         memberState(member,'warning'); member.next = elapsed + random(500,750);
       } else if (member.state === 'warning') {
-        memberState(member,'watching'); member.next = elapsed + random(850,1550);
+        memberState(member,'watching'); member.next = elapsed + random(1100,1800);
       } else {
-        memberState(member,'studying'); member.next = elapsed + random(4000,9500);
+        memberState(member,'studying'); member.next = elapsed + random(3500,8500);
       }
     });
     const watcher = members.find(m => m.state === 'watching');
