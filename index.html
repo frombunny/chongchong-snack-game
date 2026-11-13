@@ -308,7 +308,7 @@ Sound: user-provided 99430F405CF09B6E20.mp3 and 9956064F5CFA51E124.mp3
   }
   function cue(kind) {
     if (!enabled || !context) return;
-    if(kind==='caught'){for(let round=0;round<3;round++)for(let i=0;i<5;i++){const t=.76+i*.11+round*.68;if(t<2.4)note(115+i%2*30,.12,context.currentTime+t,.14);}return;}
+    if(kind==='caught'){for(let round=0;round<4;round++)for(let i=0;i<5;i++){const t=.76+i*.11+round*.68;if(t<3.2)note(115+i%2*30,.12,context.currentTime+t,.22);}return;}
     const notes=kind==='clear'?[523,659,784,1047]:[330,220,130];
     notes.forEach((f,i)=>note(f,.16,context.currentTime+i*.12));
   }
@@ -541,7 +541,7 @@ Sound: user-provided 99430F405CF09B6E20.mp3 and 9956064F5CFA51E124.mp3
     pendingFrame = 0;
     if (paused || (!running && !ending)) return;
     const dt = Math.min(now-last,100); last = now;
-    if (ending) { endingTime += dt; if (endingTime >= (outcome && typeof outcome === 'object' ? 2400 : 1100)) showResult(); else schedule(); return; }
+    if (ending) { endingTime += dt; if (endingTime >= (outcome && typeof outcome === 'object' ? 3200 : 1100)) showResult(); else schedule(); return; }
     elapsed = Math.min(duration, elapsed + dt);
     members.forEach(member => {
       if (elapsed < member.next) return;
